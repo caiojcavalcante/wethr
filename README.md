@@ -7,6 +7,20 @@ O projeto **Wethr App** utiliza vários **fundamentos da Programação Orientada
 
 ---
 
+## Requisitos do Projeto
+- Weather Data Collection: weather/WeatherDataCollector;
+- Forecast Generation: weather/WeatherForecaster;
+- User Location Services: location/Location;
+- Alert System for Severe Weather: weather/WeatherAlertSystem;
+- Historical Weather Data Access: weather/HistoricalWeatherData;
+- Customizable Weather Widgets: (Não foi implementada por não ter interface gráfica);
+- Interactive Weather Maps: (Não foi implementada por não ter interface gráfica);
+- Climate Analytics and Reporting: weather/ClimateAnalytics;
+- User Feedback and Reporting: main/get_weather_feedback;
+- Multi-Language Support: languages/Language;
+  
+---
+
 ## **1. Encapsulamento**
 
 - No módulo `location.py`, a classe `Location` usa um **atributo privado** (`_location`) para armazenar a localização do usuário. Esse atributo só pode ser acessado indiretamente através do método `get_location()`:
@@ -108,18 +122,3 @@ class WeatherForecastingSystem:
         self.historical_data.store_weather_data(location, weather_info)
         return {"weather_info": weather_info, "forecast": forecast, "alert": alert}
 ```
-
-**Vantagens:**  
-- O usuário não precisa entender a complexidade do sistema interno.
-- Interface simples e intuitiva (`get_weather_update()`).
-
----
-
-### **Recap**
-
-**Encapsulamento** → Esconde detalhes internos da implementação.  
-**Herança** → Reutiliza código entre classes.  
-**Polimorfismo** → Permite diferentes implementações para o mesmo método.  
-**Abstração** → Esconde detalhes internos e fornece uma interface simplificada.  
-
-Isso deixa o código **modular, reutilizável e de fácil manutenção**
